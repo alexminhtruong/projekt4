@@ -1,0 +1,38 @@
+{
+  "expenses": [
+    {
+      "text": "Living",
+      "value": "living"
+    },
+    {
+      "text": "Entertainment",
+      "value": "entertainment"
+    },
+    {
+      "text": "Food",
+      "value": "food"
+    },
+    {
+      "text": "Clothing",
+      "value": "clothing"
+    },
+    {
+      "text": "Savings",
+      "value": "savings"
+    }
+  ],
+  "incomes": [
+    {
+      "text": "Salary",
+      "value": "salary"
+    },
+    {
+      "text": "Student grant",
+      "value": "studentgrant"
+    },
+    {
+      "text": "Dividend",
+      "value": "dividend"
+    }
+  ]
+}
