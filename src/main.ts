@@ -190,6 +190,11 @@ function addToList(): void {
   descError?.classList.add('hidden');
   amountError?.classList.add('hidden');
 
+  // Hide add button after adding
+  if (addButton) {
+    addButton.classList.add('hidden');
+  }
+
   calculateBudget();
   saveToMyBudgetAppDataStorage();
 }
