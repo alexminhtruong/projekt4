@@ -92,7 +92,14 @@ function validateInputs(): void {
     return;
   }
 
-  addButton?.classList.add('hidden');
+  // Show add button if either income or expense is checked, hide otherwise
+  if (addButton) {
+    if ((incomeButton?.checked || expenseButton?.checked) && !(incomeButton?.checked && expenseButton?.checked)) {
+      addButton.classList.remove('hidden');
+    } else {
+      addButton.classList.add('hidden');
+    }
+  }
 
   // Get error message elements
   const descError = descriptionInput.nextElementSibling as HTMLElement | null;
@@ -115,17 +122,6 @@ function validateInputs(): void {
   } else {
     // Keep error hidden if field hasn't been touched or is empty
     amountError?.classList.add('hidden');
-  }
-
-  // Only show add button if all validations pass
-  const isDescValid = validationPatterns.description.test(descriptionInput.value);
-  const amount = parseFloat(amountInput.value);
-  const isAmountValid = validationPatterns.amount.test(amountInput.value) && amount > 0;
-  const isTypeSelected =
-    (incomeButton?.checked || expenseButton?.checked) && !(incomeButton?.checked && expenseButton?.checked);
-
-  if (isDescValid && isAmountValid && isTypeSelected) {
-    addButton.classList.remove('hidden');
   }
 }
 
