@@ -1,6 +1,6 @@
 import './styles/style.scss';
-import { type IBudgetItem } from './models';
-import { type Categories } from './models';
+import { type IBudgetItem } from './models.ts';
+import { type Categories } from './models.ts';
 
 const currentDay: HTMLElement | null = document.querySelector('#currentDay');
 const descriptionInput: HTMLInputElement | null = document.querySelector('#descriptionInput');
