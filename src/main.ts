@@ -59,6 +59,11 @@ if (expenseButton !== null) {
   });
 }
 
+// Ensure add button is hidden on page load
+if (addButton) {
+  addButton.classList.add('hidden');
+}
+
 if (descriptionInput) {
   descriptionInput.addEventListener('input', evt => {
     const target = evt.target as HTMLInputElement;
