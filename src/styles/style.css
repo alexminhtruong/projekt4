@@ -1,0 +1,468 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+@media screen and (max-width: 393px) {
+  .appContainer h1 {
+    font-size: 2rem;
+  }
+  .appContainer p {
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 5px;
+  }
+  .appContainer label {
+    position: relative;
+    top: 10px;
+    font-size: 1rem;
+    margin: 10px;
+  }
+  .inputFieldToSort {
+    max-width: 90vw;
+  }
+  .inputFieldToSort input {
+    height: 30px;
+    width: 80vw;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  .inputFieldToSort input[type=checkbox] {
+    position: relative;
+    top: 5px;
+    left: -105px;
+    transform: scale(1.2);
+    box-shadow: 2px 2px 2px grey;
+    padding: 0;
+    border: none;
+  }
+  .inputFieldToSort button {
+    position: relative;
+    top: -5px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgb(3, 1, 1);
+    margin: 5px;
+  }
+  .inputFieldToSort .incomeOrExpenseCheckbox {
+    position: relative;
+    left: 13px;
+    font-size: 1.2rem;
+  }
+  .choiceOfSubmit {
+    max-width: 90vw;
+  }
+  .choiceOfSubmit select {
+    right: 25px;
+    top: 20px;
+    width: 95px;
+    height: 25px;
+    border-radius: 10px;
+    padding-inline: 5px;
+    background-color: white;
+    font-size: 1rem;
+  }
+  .budgetDisplay {
+    min-width: 100%;
+    gap: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .budgetDisplay h2 {
+    padding: 2px;
+  }
+  .budgetDisplay .expensesBox {
+    width: 100%;
+    min-height: 200px;
+  }
+  .budgetDisplay .expensesBox li {
+    font-size: 1rem;
+    color: brown;
+  }
+  .budgetDisplay .incomesBox {
+    width: 100%;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  .remainingAmountContainer {
+    width: 100%;
+    box-shadow: 2px 2px 2px grey;
+    padding: 5px;
+  }
+}
+@media screen and (min-width: 1044px) {
+  .appContainer h1 {
+    font-size: 3rem;
+  }
+  .appContainer p {
+    font-size: 1.4rem;
+    padding: 5px;
+    margin: 5px;
+  }
+  .appContainer label {
+    position: relative;
+    top: 10px;
+    font-size: 1rem;
+    margin: 10px;
+  }
+  .inputFieldToSort {
+    width: 700px;
+  }
+  .inputFieldToSort input {
+    height: 30px;
+    width: 300px;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  .inputFieldToSort input[type=checkbox] {
+    position: relative;
+    top: 5px;
+    left: -60px;
+    transform: scale(0.6);
+    box-shadow: 2px 2px 2px grey;
+    padding: 0;
+    border: none;
+  }
+  .inputFieldToSort button {
+    position: relative;
+    top: -5px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgb(3, 1, 1);
+  }
+  .inputFieldToSort .incomeOrExpenseCheckbox {
+    font-size: 1rem;
+  }
+  .toggleCategoryBtn {
+    position: relative;
+  }
+  select {
+    top: 20px;
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    padding-inline: 15px;
+    background-color: white;
+  }
+  .budgetDisplay {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 700px;
+    gap: 2px;
+  }
+  .budgetDisplay h2 {
+    padding: 2px;
+  }
+  .budgetDisplay .expensesBox {
+    max-width: 350px;
+    min-height: 500px;
+  }
+  .budgetDisplay .expensesBox li {
+    font-size: 1.2rem;
+  }
+  .budgetDisplay .incomesBox {
+    max-width: 350px;
+    min-height: 500px;
+  }
+  .budgetDisplay .incomesBox li {
+    font-size: 1.2rem;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  .remainingAmountContainer {
+    width: 700px;
+    box-shadow: 2px 2px 2px grey;
+  }
+}
+body {
+  margin: 20px;
+  background-color: #426190;
+  color: white;
+}
+
+.addedToList {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+  color: rgb(248, 244, 52);
+  text-shadow: 2px 2px 2px black;
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.appContainer h1,
+.appContainer h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+}
+.appContainer p {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+}
+.appContainer label {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+}
+.appContainer #descriptionInput {
+  text-transform: capitalize;
+}
+
+.inputFieldToSort {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-top: 2px solid black;
+  border-radius: 20px 20px 0 0;
+}
+.inputFieldToSort button {
+  margin-left: 20px;
+  background-color: #0952aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.inputFieldToSort button:hover {
+  background-color: #52a5fc;
+}
+.inputFieldToSort input {
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.choiceOfSubmit {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  padding: 15px;
+  justify-content: space-evenly;
+}
+.choiceOfSubmit label {
+  position: relative;
+  left: 80px;
+}
+.choiceOfSubmit select {
+  position: relative;
+}
+
+span.error {
+  max-width: 300px;
+  color: red;
+  font-weight: bold;
+  border-left: 2px solid red;
+  padding: 2px 8px;
+  line-height: 1.3;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 2px;
+}
+span.error::before {
+  content: "error";
+  font-family: "Material Symbols Outlined";
+  font-size: 1rem;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin-right: 4px;
+}
+span.error.hidden {
+  display: none;
+}
+
+.budgetDisplay {
+  background-color: #f7f7f7;
+  padding-bottom: 10px;
+}
+.budgetDisplay .expensesBox {
+  background-color: #f4d3d3;
+  color: black;
+  text-align: center;
+  border: 2px solid #c87f7f;
+  border-radius: 20px;
+}
+.budgetDisplay .expensesBox li {
+  color: black;
+  text-shadow: 2px 2px 2px #ffffff;
+}
+.budgetDisplay .expensesBox h2 {
+  color: black;
+  text-shadow: 2px 2px 2px #ffffff;
+  word-spacing: 2px;
+  border-bottom: 2px solid #c87f7f;
+}
+.budgetDisplay .expensesBox button {
+  margin-top: 5px;
+  background-color: #d14343;
+  border-radius: 20px;
+  margin-left: 10px;
+  color: black;
+  box-shadow: 2px 2px 2px grey;
+}
+.budgetDisplay .incomesBox {
+  background-color: #addba8;
+  color: black;
+  text-align: center;
+  border: 2px solid #183a02;
+  border-radius: 20px;
+}
+.budgetDisplay .incomesBox h2 {
+  color: black;
+  text-shadow: 2px 2px 2px #ffffff;
+  word-spacing: 2px;
+  border-bottom: 2px solid #183a02;
+}
+.budgetDisplay .incomesBox li {
+  color: black;
+  text-shadow: 2px 2px 2px #ffffff;
+}
+.budgetDisplay .incomesBox button {
+  margin-top: 5px;
+  background-color: #addba8;
+  border-radius: 20px;
+  margin-left: 10px;
+  color: black;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.budgetDisplay .expensesBox button:hover {
+  background-color: #f81919;
+  cursor: pointer;
+}
+.budgetDisplay .incomesBox button:hover {
+  background-color: #54e827;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  margin: 5px;
+  padding: 5px;
+}
+
+.remainingAmountContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #082F68;
+  color: black;
+  border-bottom: 2px solid black;
+  border-radius: 0 0 20px 20px;
+  padding-top: 5px;
+}
+.remainingAmountContainer h2 {
+  margin: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px #053567;
+  word-spacing: 2px;
+}/*# sourceMappingURL=style.css.map */

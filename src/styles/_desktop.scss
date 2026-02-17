@@ -1,0 +1,109 @@
+@media screen and (min-width: 1044px) {
+  .appContainer {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    label {
+      position: relative;
+      top: 10px;
+      font-size: 1rem;
+      margin: 10px;
+    }
+  }
+
+  .inputFieldToSort {
+    width: 700px;
+
+    input {
+      height: 30px;
+      width: 300px;
+      font-size: 1.2rem;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 20px;
+
+      &[type='checkbox'] {
+        position: relative;
+        top: 5px;
+        left: -60px;
+        transform: scale(0.6);
+        box-shadow: 2px 2px 2px grey;
+        padding: 0;
+        border: none;
+      }
+    }
+
+    button {
+      position: relative;
+      top: -5px;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 2px rgb(3, 1, 1);
+    }
+
+    .incomeOrExpenseCheckbox {
+      font-size: 1rem;
+    }
+  }
+
+  .toggleCategoryBtn {
+    position: relative;
+  }
+
+  select {
+    top: 20px;
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    padding-inline: 15px;
+    background-color: white;
+  }
+
+  .budgetDisplay {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    height: fit-content;
+    width: 700px;
+    gap: 2px;
+
+    h2 {
+      padding: 2px;
+    }
+
+    .expensesBox {
+      max-width: 350px;
+      min-height: 500px;
+
+      li {
+        font-size: 1.2rem;
+      }
+    }
+    .incomesBox {
+      max-width: 350px;
+      min-height: 500px;
+
+      li {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .remainingAmountContainer {
+    width: 700px;
+    box-shadow: 2px 2px 2px grey;
+  }
+}

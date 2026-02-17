@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="/public/favicon.ico" rel="icon" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>My Budget</title>
+</head>
+
+<body>
+  <header>
+    <p id="addedToList" class="addedToList"></p>
+  </header>
+  <div class="appContainer">
+    <section>
+      <h1>My Budget</h1>
+      <p id="currentDay"></p>
+      <div id="inputFieldToSort" class="inputFieldToSort">
+        <label for="descriptionInput">Description:</label>
+        <input type="text" id="descriptionInput" required>
+        <span class="hidden error">"Description must contain at least 2 characters and can only contain letters, dots
+          (.), hyphens (-) or
+          apostrophes (')."</span>
+        <label for="amountInput">Amount:</label>
+        <input type="number" id="amountInput" min="0.01" step="0.01" required>
+        <span class="hidden error">"Amount must be a positive number."</span>
+        <div class="choiceOfSubmit">
+          <label for="incomeButton" class="incomeOrExpenseCheckbox">Income</label>
+          <input type="checkbox" id="incomeButton" name="transactionType" value="income">
+          <label for="expenseButton" class="incomeOrExpenseCheckbox">Expense</label>
+          <input type="checkbox" id="expenseButton" name="transactionType" value="expense">
+          <select id="categoryDropdown" aria-label="Select transaction category">
+            <option value="" disabled selected>Select category</option>
+          </select>
+        </div>
+        <div id="btnContainer">
+          <button id="addButton" class="addButton hidden" aria-label="Add item">Add</button>
+          <button id="toggleCategoryBtn" class="toggleCategoryBtn" aria-label="Get categories">Get categories</button>
+
+        </div>
+      </div>
+    </section>
+    <section class="budgetDisplay">
+      <div class="expensesBox">
+        <h2>Expenses</h2>
+        <ul id="expenseList">
+        </ul>
+      </div>
+
+      <div class="incomesBox">
+        <h2>Incomes</h2>
+        <ul id="incomeList">
+        </ul>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div id="remainingAmountContainer" class="remainingAmountContainer">
+      <h2>Remaining to spend: <span id="remainingAmount">0</span> SEK</h2>
+    </div>
+  </footer>
+  <script type="module" src="./src/main.ts"></script>
+</body>
+
+</html>
